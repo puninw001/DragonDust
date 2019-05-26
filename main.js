@@ -72,7 +72,7 @@ var mainState = {
 
     // Add player on x = 400, y= 450 (respawn in the middle of the scene)
     // collideWorldBounds = true; means cannot get out of the scene (fixed bug falling through map)
-    this.player = game.add.sprite(350, 500, 'player');
+    this.player = game.add.sprite(325, 500, 'player');
     game.physics.arcade.enable(this.player);
     this.player.body.gravity.y = 980;
     this.player.body.collideWorldBounds = true;
