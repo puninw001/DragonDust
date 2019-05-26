@@ -12,7 +12,7 @@ var mainState = {
     game.load.image('background', 'assets/background.png');
 
     // game.load.spritesheet('name', 'path/to/filename', width, height)  optional : frame count.
-    game.load.spritesheet('player', 'assets/pokemon_1.png', 64, 64);
+    game.load.spritesheet('player', 'assets/warrior_m.png', 32, 36);
   },
 
   create: function () {
@@ -57,11 +57,15 @@ var mainState = {
     ga1.scale.setTo(0.5, 0.5);
     ga1.body.immovable = true;
 
-    var  ga2 = this.myWorld.create(600, game.world.height - 170, 'groundAir');
+    var  ga2 = this.myWorld.create(380, game.world.height - 170, 'groundAir');
     ga2.scale.setTo(0.5, 0.5);
     ga2.body.immovable = true;
 
-    var  ga2 = this.myWorld.create(350, game.world.height - 290, 'groundAir');
+    var  ga2 = this.myWorld.create(200, game.world.height - 290, 'groundAir');
+    ga2.scale.setTo(0.5, 0.5);
+    ga2.body.immovable = true;
+
+    var  ga2 = this.myWorld.create(580, game.world.height - 290, 'groundAir');
     ga2.scale.setTo(0.5, 0.5);
     ga2.body.immovable = true;
 
@@ -72,19 +76,13 @@ var mainState = {
 
     // Add player on x = 400, y= 450 (respawn in the middle of the scene)
     // collideWorldBounds = true; means cannot get out of the scene (fixed bug falling through map)
-    this.player = game.add.sprite(400, 450, 'player');
+    this.player = game.add.sprite(350, 500, 'player');
     game.physics.arcade.enable(this.player);
     this.player.body.gravity.y = 980;
     this.player.body.collideWorldBounds = true;
-
     // animations.add(name, frames, frame rate, loop);
-    this.player.animations.add('right', [8, 9, 10, 11], 10, true);
-    this.player.animations.add('left', [4, 5, 6, 7], 10, true);
-    this.player.frame = 2;
-
-    // Add chicken pick up for point
-    this.chicken = game.add.group();
-    this.chicken.enableBody = true;
+    this.player.animations.add('right', [3, 4, 5], 10, true);
+    this.player.animations.add('left', [9, 10, 11], 10, true);
 
     // Add enemy
     this.enemy = game.add.group();
@@ -117,7 +115,7 @@ var mainState = {
       this.player.animations.play('left');
     } else {
       this.player.animations.stop();
-      this.player.frame = 2;
+      this.player.frame = 6;
     }
 
     // // Allow player to jump if player touching the ground.
@@ -195,7 +193,7 @@ var mainState = {
 };
 
 // Phaser.Game(width, height, renderer, HTML Element);
-var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game');
+var game = new Phaser.Game(700, 600, Phaser.AUTO, 'game');
 
 game.state.add('main', mainState);
 game.state.start('main');
