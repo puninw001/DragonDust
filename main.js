@@ -57,11 +57,11 @@ var mainState = {
     ga1.scale.setTo(0.5, 0.5);
     ga1.body.immovable = true;
 
-    var  ga2 = this.myWorld.create(400, game.world.height - 170, 'groundAir');
+    var  ga2 = this.myWorld.create(440, game.world.height - 170, 'groundAir');
     ga2.scale.setTo(0.5, 0.5);
     ga2.body.immovable = true;
 
-    var  ga2 = this.myWorld.create(220, game.world.height - 290, 'groundAir');
+    var  ga2 = this.myWorld.create(230, game.world.height - 290, 'groundAir');
     ga2.scale.setTo(0.5, 0.5);
     ga2.body.immovable = true;
 
@@ -139,7 +139,7 @@ var mainState = {
       this.enemy.create(x, y, 'enemies');
       this.enemy.forEach(function(enemies) {
         game.physics.arcade.enable(enemies);
-        enemies.scale.setTo(2, 2);
+        enemies.scale.setTo(0.5, 0.5);
         enemies.body.gravity.y = 400;
     });
     }
@@ -172,15 +172,15 @@ var mainState = {
     die.play();
     player.destroy();
     end = true;
-    this.endText = game.add.text(220, 170, 'เห็นแล้วรึยังว่าฝุ่นอันตรายขนาดไหน !!', {
+    this.endText = game.add.text(140, 170, 'เห็นแล้วรึยังว่าฝุ่นอันตรายขนาดไหน !!', {
       fontSize: '20px',
       fill: '#FF0000'
     });
-    this.endText = game.add.text(220, 220, 'You see? how danger dust is it !!', {
+    this.endText = game.add.text(140, 220, 'You see? how danger dust is it !!', {
       fontSize: '20px',
       fill: '#FF0000'
     });
-    this.endText = game.add.text(180, 270, 'Press down_arrow if wants to play again.', {
+    this.endText = game.add.text(100, 270, 'Press down_arrow if wants to play again.', {
       fontSize: '20px',
       fill: '#FF0000'
     });
