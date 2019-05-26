@@ -57,15 +57,11 @@ var mainState = {
     ga1.scale.setTo(0.5, 0.5);
     ga1.body.immovable = true;
 
-    var  ga2 = this.myWorld.create(380, game.world.height - 170, 'groundAir');
+    var  ga2 = this.myWorld.create(400, game.world.height - 170, 'groundAir');
     ga2.scale.setTo(0.5, 0.5);
     ga2.body.immovable = true;
 
-    var  ga2 = this.myWorld.create(200, game.world.height - 290, 'groundAir');
-    ga2.scale.setTo(0.5, 0.5);
-    ga2.body.immovable = true;
-
-    var  ga2 = this.myWorld.create(580, game.world.height - 290, 'groundAir');
+    var  ga2 = this.myWorld.create(220, game.world.height - 290, 'groundAir');
     ga2.scale.setTo(0.5, 0.5);
     ga2.body.immovable = true;
 
@@ -143,7 +139,7 @@ var mainState = {
       this.enemy.create(x, y, 'enemies');
       this.enemy.forEach(function(enemies) {
         game.physics.arcade.enable(enemies);
-        enemies.scale.setTo(0.2, 0.2);
+        enemies.scale.setTo(2, 2);
         enemies.body.gravity.y = 400;
     });
     }
@@ -193,7 +189,7 @@ var mainState = {
 };
 
 // Phaser.Game(width, height, renderer, HTML Element);
-var game = new Phaser.Game(700, 600, Phaser.AUTO, 'game');
+var game = new Phaser.Game(650, 600, Phaser.AUTO, 'game');
 
 game.state.add('main', mainState);
 game.state.start('main');
